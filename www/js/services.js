@@ -3,24 +3,19 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('PetService', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var pets = [
-    { id: 0, title: 'Cats', description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.' },
-    { id: 1, title: 'Dogs', description: 'Lovable. Loyal almost to a fault. Smarter than they let on.' },
-    { id: 2, title: 'Turtles', description: 'Everyone likes turtles.' },
-    { id: 3, title: 'Sharks', description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.' }
-  ];
+.factory('PetService', function($firebase) {
+  var _ref = new Firebase('https://kazoku.firebaseio.com/pets');
+  var _pets = $firebase(_ref);
 
   return {
     all: function() {
-      return pets;
+      return _pets;
     },
     get: function(petId) {
-      // Simple index lookup
-      return pets[petId];
+      return _pets[petId];
+    },
+    add: function(pet) {
+      return _pets.$add(pet);
     }
   }
 });

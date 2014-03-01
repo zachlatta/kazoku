@@ -1,0 +1,22 @@
+<!--
+  This template loads for the 'tab.add' state (app.js)
+-->
+<ion-view title="'Add A Pet'">
+  <ion-content has-header="true" has-tabs="true">
+    <div class="list list-inset">
+      <form name="newPet" ng-submit="addPet(pet, newPet)">
+        <label class="item item-input">
+          <span class="input-label">Title</span>
+          <input type="text" name="title" ng-model="pet.title" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Description</span>
+          <input type="text" name="description" ng-model="pet.description"
+            required>
+        </label>
+        <button class="button button-positive button-block"
+          ng-disabled="newPet.$invalid">Add</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
