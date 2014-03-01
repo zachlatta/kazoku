@@ -1,3 +1,8 @@
 *.keystore
 *.sw*
 platforms/^.*
+
+# SCSS
+
+*.sass-cache
+www/css/app.css
