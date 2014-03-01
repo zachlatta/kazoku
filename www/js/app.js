@@ -27,23 +27,23 @@ angular.module('starter', [
       templateUrl: "templates/tabs.html"
     })
 
-    // the pet tab has its own child nav-view and history
-    .state('tab.pet-index', {
-      url: '/pets',
+    // the task tab has its own child nav-view and history
+    .state('tab.task-index', {
+      url: '/tasks',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-index.html',
-          controller: 'PetIndexCtrl'
+        'tasks-tab': {
+          templateUrl: 'templates/task-index.html',
+          controller: 'TaskIndexCtrl'
         }
       }
     })
 
-    .state('tab.pet-detail', {
-      url: '/pet/:petId',
+    .state('tab.task-detail', {
+      url: '/task/:taskId',
       views: {
-        'pets-tab': {
-          templateUrl: 'templates/pet-detail.html',
-          controller: 'PetDetailCtrl'
+        'tasks-tab': {
+          templateUrl: 'templates/task-detail.html',
+          controller: 'TaskDetailCtrl'
         }
       }
     })
@@ -53,13 +53,13 @@ angular.module('starter', [
       views: {
         'add-tab': {
           templateUrl: 'templates/add.html',
-          controller: 'PetAddCtrl'
+          controller: 'TaskAddCtrl'
         }
       }
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/pets');
+  $urlRouterProvider.otherwise('/tab/tasks');
 
 });
 

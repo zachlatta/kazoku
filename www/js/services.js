@@ -1,21 +1,18 @@
 angular.module('starter.services', [])
 
-/**
- * A simple example service that returns some data.
- */
-.factory('PetService', function($firebase) {
-  var _ref = new Firebase('https://kazoku.firebaseio.com/pets');
-  var _pets = $firebase(_ref);
+.factory('TaskService', function($firebase) {
+  var _ref = new Firebase('https://kazoku.firebaseio.com/tasks');
+  var _tasks = $firebase(_ref);
 
   return {
     all: function() {
-      return _pets;
+      return _tasks;
     },
-    get: function(petId) {
-      return _pets[petId];
+    get: function(taskId) {
+      return _tasks[taskId];
     },
-    add: function(pet) {
-      return _pets.$add(pet);
+    add: function(task) {
+      return _tasks.$add(task);
     }
   }
 });

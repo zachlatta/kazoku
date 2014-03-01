@@ -1,19 +1,19 @@
 angular.module('starter.controllers', [])
 
-.controller('PetIndexCtrl', function($scope, PetService) {
-  $scope.pets = PetService.all();
+.controller('TaskIndexCtrl', function($scope, TaskService) {
+  $scope.tasks = TaskService.all();
 })
 
-.controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
-  $scope.pet = PetService.get($stateParams.petId);
+.controller('TaskDetailCtrl', function($scope, $stateParams, TaskService) {
+  $scope.task = TaskService.get($stateParams.taskId);
 })
 
-.controller('PetAddCtrl', function($scope, PetService) {
-  $scope.pets = PetService.all();
-  $scope.addPet = function(pet, form) {
-    PetService.add(pet);
+.controller('TaskAddCtrl', function($scope, TaskService) {
+  $scope.addTask = function(task) {
+    console.log(task);
+    TaskService.add(task);
 
-    pet.title = '';
-    pet.description = '';
+    task.title = '';
+    task.description = '';
   }
 });
