@@ -20,46 +20,14 @@ angular.module('starter', [
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
-    })
-
-    // the task tab has its own child nav-view and history
-    .state('tab.task-index', {
+    .state('tasks', {
       url: '/tasks',
-      views: {
-        'tasks-tab': {
-          templateUrl: 'templates/task-index.html',
-          controller: 'TaskIndexCtrl'
-        }
-      }
-    })
-
-    .state('tab.task-detail', {
-      url: '/task/:taskId',
-      views: {
-        'tasks-tab': {
-          templateUrl: 'templates/task-detail.html',
-          controller: 'TaskDetailCtrl'
-        }
-      }
-    })
-
-    .state('tab.add', {
-      url: '/add',
-      views: {
-        'add-tab': {
-          templateUrl: 'templates/add.html',
-          controller: 'TaskAddCtrl'
-        }
-      }
+      templateUrl: 'templates/tasks.html',
+      controller: 'TasksCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/tasks');
+  $urlRouterProvider.otherwise('/tasks');
 
 });
 

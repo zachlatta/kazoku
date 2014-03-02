@@ -1,0 +1,17 @@
+<ion-view title="'Tasks'">
+  <ion-content has-header="true" has-tabs="true">
+
+    <ion-list>
+
+      <li ng-repeat="task in tasks | orderByPriority"
+          class="item item-checkbox">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="task.completed">
+        </label>
+        {{task.title}}
+      </ion-item>
+      
+    </ion-list>
+
+  </ion-content>
+</ion-view>
