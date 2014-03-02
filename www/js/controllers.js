@@ -31,9 +31,11 @@ angular.module('starter.controllers', [])
   $scope.createTask = function (task) {
     TaskService.$add({
       title: task.title,
+      person: task.person,
       completed: false
     });
     $scope.taskModal.hide();
     task.title = '';
+    task.person = '';
   };
 })
